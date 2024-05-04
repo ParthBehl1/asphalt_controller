@@ -58,13 +58,13 @@ while True:
         currentKey.append(Space)
 
     img = cv2.rectangle(img, (0, 0), (width//2 - 35, height//2), (0, 255, 0), 1)
-    cv2.putText(img, 'LEFT', (110, 30), cv2.FONT_HERSHEY_DUPLEX, 1, (139, 0, 0))
+    cv2.putText(img, 'LEFT', (110, 30), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 0))
 
     img = cv2.rectangle(img, (width//2 + 35, 0), (width - 2, height//2), (0, 255, 0), 1)
-    cv2.putText(img, 'RIGHT', (440, 30), cv2.FONT_HERSHEY_DUPLEX, 1, (139, 0, 0))
+    cv2.putText(img, 'RIGHT', (550, 30), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 0))
 
     img = cv2.rectangle(img, (2*(width//5), 3*(height//4)), (3*width//5, height), (0, 255, 0), 1)
-    cv2.putText(img, 'NITRO', (2*(width//5) + 20, height - 10), cv2.FONT_HERSHEY_DUPLEX, 1, (139, 0, 0))
+    cv2.putText(img, 'NITRO', (2*(width//5) + 20, height - 10), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 0))
 
     cv2.imshow("Steering", img)
 

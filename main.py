@@ -47,9 +47,9 @@ while True:
     if len(cnts_up) > 0:
         c = max(cnts_up, key=cv2.contourArea)
         M = cv2.moments(c)
-        cX = int(M["m10"] / M["m00"])
+        cX = int(M["m10"] / M["m00"])   #to find the centroid of the x coordinate of the rectangle
 
-        if cX < (width//2 - 35):
+        if cX < (width//2 - 35):     #as we divided the image into left and right, this will make it move neither left nor right
             press_key(A)
             key = True
             currentKey.append(A)
