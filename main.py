@@ -1,6 +1,6 @@
 # step1-capture the image 
 # step2-convert to hsv
-# step3-gaussian blur the image
+# step3-gaussian blur the image  - removing noise from an image that is the extra data we do not need
 # step4-morphological tranformations
 # step5-searching ConnectionRefusedError
 # step6-navigate car
@@ -35,10 +35,10 @@ while True:
     width = img.shape[1]
     height = img.shape[0]
 
-    upContour = mask[0:height//2, 0:width]
-    downContour = mask[3*height//4:height, 2*width//5:3*width//5]
+    upContour = mask[0:height//2, 0:width]       #defining left and right control
+    downContour = mask[3*height//4:height, 2*width//5:3*width//5]         #defining bottom nitro control
 
-    cnts_up = cv2.findContours(upContour, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cnts_up = cv2.findContours(upContour, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)    #CHAIN_APPROX_SIMPL= endpoints of the rectangle border made 
     cnts_up = imutils.grab_contours(cnts_up)
 
     cnts_down = cv2.findContours(downContour, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
